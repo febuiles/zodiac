@@ -17,7 +17,7 @@ module ZodiacHelper
   # <b>Remember that Ruby uses an octal representation for a number if it's
   # prefixed by a zero, so 0612 is not the same as 612.</b>
   def zodiac_sign_for(date)
-    if date.kind_of?(Time)
+    if date.respond_to?(:strftime)
       birth = date.strftime("%m%d").to_i # month/day as an integer
     else
       birth = date
