@@ -2,14 +2,10 @@ require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
 
-desc 'Default: run unit tests.'
-task :default => :test
-
-desc 'Test the zodiac plugin.'
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
+desc "Runs the spec suite"
+task :spec do
+  spec_path = "#{File.dirname(__FILE__)}/spec"
+  sh "spec #{spec_path} -O #{spec_path}/spec.opts "
 end
 
 desc 'Generate documentation for the zodiac plugin.'
