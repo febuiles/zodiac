@@ -1,13 +1,16 @@
 Zodiac
 ======
 
-Introduction goes here.
-
+A Rails plugin to get the zodiac sign on a given date.
 
 Example
 =======
 
-Example goes here.
+    zodiac_sign_for(Time.utc(2000, "jun", 12))
+    # => "Gemini"
 
+    zodiac_sign_for(1118)  # November 18
+    # => Scorpio
 
-Copyright (c) 2008 [name of plugin creator], released under the MIT license
+Copyright (c) 2008 Federico Builes, released under the MIT license.
+Fork freely!
